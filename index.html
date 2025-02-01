@@ -99,7 +99,7 @@
                     <img src="./assets/images/charge.png" id="charge" alt="Energy" class="mr-2">
                     <div class="flex justify-between items-center">
                         <span id="inventory">1000</span>
-                        <span> / 0100</span>
+                        <span> / 1000</span>
                     </div>
                 </div>
             </div>
@@ -181,7 +181,7 @@ function handleClick() {
         }, 500);
 
         const scoreDisplay = document.createElement('div');
-        scoreDisplay.textContent = "+2";
+        scoreDisplay.textContent = "+4";
         scoreDisplay.classList.add('score-display');
         document.body.appendChild(scoreDisplay);
 
@@ -194,10 +194,10 @@ function handleClick() {
         }, 1000);
 
         if (inventory === 0) {
-            setTimeout(() => {
+            setTimeout((2) => {
                 inventory = maxInventory;
-                updateInventory();
-            }, rechargeTime);
+                updateInventory(1000);
+            }, rechargeTime); 10
         }
     }
 }
