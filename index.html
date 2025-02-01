@@ -98,8 +98,8 @@
                 <div class="flex items-center">
                     <img src="./assets/images/charge.png" id="charge" alt="Energy" class="mr-2">
                     <div class="flex justify-between items-center">
-                        <span id="inventory">500</span>
-                        <span> / 500</span>
+                        <span id="inventory">1000</span>
+                        <span> / 0100</span>
                     </div>
                 </div>
             </div>
@@ -148,9 +148,9 @@
     </div>
 
     <script>
-       let inventory = 500;
-const maxInventory = 500;
-const rechargeTime = 3600000; // 1 hour
+       let inventory = 2500;
+const maxInventory = 2500;
+const rechargeTime = 360000; // 1 hour
 
 // Start vibration if supported by the device
 function startVibration() {
@@ -163,12 +163,12 @@ function startVibration() {
 
 // Handle click event on the image
 function handleClick() {
-    if (inventory > 2) {
+    if (inventory > 4) {
         let coins = Number(localStorage.getItem('coins')) || 0; // Retrieve the saved coins
-        coins += 2;
+        coins += 4;
         localStorage.setItem('coins', coins); // Save updated coins to localStorage
 
-        inventory -= 2;
+        inventory -= 4;
 
         document.getElementById('score').textContent = `$ ${coins.toLocaleString()}`;
         updateInventory();
